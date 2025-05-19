@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 142 71% 45%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 244 83% 68%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 142 71% 45%;
+    --gaming-primary: 142 71% 45%;
+    --gaming-secondary: 217 91% 60%;
+    --gaming-accent: 244 83% 68%;
+    --gaming-neon: 280 100% 60%;
+    --gaming-dark: 240 10% 3.9%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl font-bold;
+  }
+
+  h2 {
+    @apply text-3xl sm:text-4xl font-bold;
+  }
+
+  h3 {
+    @apply text-2xl sm:text-3xl font-bold;
+  }
+
+  h4 {
+    @apply text-xl sm:text-2xl font-semibold;
+  }
+}
+
+@layer components {
+  .hero-text {
+    text-shadow: 0 0 10px hsl(var(--gaming-neon));
+  }
+
+  .gaming-card {
+    @apply rounded-lg bg-black/50 backdrop-blur-sm border border-white/10 shadow-gaming-card hover:border-white/20 transition-all duration-300;
+  }
+
+  .gaming-button {
+    @apply px-6 py-3 rounded-md relative overflow-hidden 
+    bg-gradient-to-r from-gaming-primary to-gaming-secondary text-white font-bold
+    hover:from-gaming-secondary hover:to-gaming-primary
+    transition-all duration-300 shadow-md hover:shadow-lg
+    before:content-[""] before:absolute before:inset-0 
+    before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent
+    before:translate-x-[-100%] hover:before:translate-x-[100%] 
+    before:transition-transform before:duration-700;
+  }
+
+  .gaming-gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gaming-primary to-gaming-secondary;
+  }
+
+  .neon-border {
+    @apply border border-gaming-accent/50 shadow-neon;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+  }
+}
