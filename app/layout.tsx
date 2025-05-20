@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${spaceGrotesk.variable} ${orbitron.variable} font-sans`}>
-        <ThreeJSBackground/>
+        {/* <ThreeJSBackground/> */}
         <Navbar />
         <main className="relative z-10">{children}</main>
         <Footer />
