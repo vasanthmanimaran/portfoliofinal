@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Space_Grotesk, Orbitron } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import ThreeJSBackground from '@/components/ThreeJSBackground';
+// import ThreeJSBackground from '@/components/ThreeJSBackground';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
